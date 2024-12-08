@@ -1,38 +1,60 @@
-import React from 'react';
-import { ArrowRight, Smartphone, Keyboard } from 'lucide-react';
+import React from "react";
+import { ArrowRight, Smartphone, Keyboard } from "lucide-react";
 
 export function Hero() {
   return (
-    <div className="relative overflow-hidden bg-gray-900">
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Making Technology Accessible for Everyone
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-            We're bridging the digital divide with innovative solutions that cater to all users,
-            regardless of their technological comfort level. Choose the interface that works best for you.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-6">
-            <button
-              onClick={() => window.location.href = '/keypad'}
-              className="group inline-flex items-center gap-2 rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-            >
-              <Keyboard className="h-5 w-5" />
-              Learn More About Keypad Solution
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button
-              onClick={() => window.location.href = '/smartphone'}
-              className="group inline-flex items-center gap-2 rounded-full bg-gray-800 px-6 py-3 text-sm font-semibold text-gray-300 shadow-sm ring-1 ring-gray-700 hover:bg-gray-700 hover:text-white"
-            >
-              <Smartphone className="h-5 w-5" />
-              Explore Smartphone Features
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          </div>
+    <section className="relative bg-green-50 h-screen flex items-center justify-between px-10">
+      <div className="max-w-lg space-y-6">
+        <h1 className="text-5xl font-extrabold text-green-800 leading-tight">
+          Empowering Farmers with Technology
+        </h1>
+        <p className="text-lg text-gray-600">
+          Simplifying agriculture with accessible solutions for rural
+          communities. Stay informed, make better decisions, and thrive with our
+          platform.
+        </p>
+        <div className="flex space-x-4">
+          <button className="px-6 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700">
+            Learn About Keypad Solution
+          </button>
+
+          <button className="px-6 py-3 bg-white flex items-center justify-center text-green-600 border border-green-600 rounded-lg shadow-md hover:bg-green-50">
+            Explore Smartphone Features
+            <ArrowRight className="h-6 w-6 text-green-600" />
+          </button>
         </div>
       </div>
-    </div>
+
+      <div className="relative flex-1 flex justify-center items-center group">
+        <img
+          src="bg1.png"
+          alt="Happy Farmer"
+          className="rounded-xl shadow-lg w-3/4 object-cover z-10 transform group-hover:scale-105 group-hover:translate-y-[-10px] transition-transform duration-500 ease-in-out"
+        />
+        <img
+          src="farmlandscape.png"
+          alt="Farm Landscape"
+          className="absolute top-10 left-10 w-32 h-32 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[-5deg] group-hover:scale-110 group-hover:rotate-0 transition-transform duration-500 ease-in-out"
+        />
+        <img
+          src="farmland.png"
+          alt="Farmland"
+          className="absolute top-10 right-10 w-32 h-32 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[5deg] group-hover:scale-110 group-hover:rotate-0 transition-transform duration-500 ease-in-out"
+        />
+        <img
+          src="tractor.png"
+          alt="Tractor"
+          className="absolute bottom-10 left-10 w-40 h-40 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[3deg] group-hover:scale-110 group-hover:rotate-[-5deg] transition-transform duration-500 ease-in-out"
+        />
+        <img
+          src="tool.png"
+          alt="Farming Tools"
+          className="absolute bottom-10 right-10 w-40 h-40 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[3deg] group-hover:scale-110 group-hover:rotate-[5deg] transition-transform duration-500 ease-in-out"
+        />
+        <div className="absolute inset-0 flex justify-center items-center -z-10">
+          <div className="w-96 h-96 bg-green-100 rounded-full blur-xl opacity-30"></div>
+        </div>
+      </div>
+    </section>
   );
 }

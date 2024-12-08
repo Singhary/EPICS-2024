@@ -36,13 +36,13 @@ const importancePoints = [
     title: "Accessible Anywhere",
     description:
       "Farmers in remote areas can access vital updates without internet, empowering them with timely information.",
-    imgSrc: "1.jpg",
+    imgSrc: "accessible.png",
   },
   {
     title: "Empowers Decision-Making",
     description:
       "Real-time weather, market, and emergency updates enable farmers to make informed decisions.",
-    imgSrc: "/empowerment.jpg",
+    imgSrc: "empowerment.png",
   },
 ];
 
@@ -105,7 +105,7 @@ const KeypadSolution = () => {
               <img
                 src={point.imgSrc}
                 alt={point.title}
-                className="w-full md:w-1/2 rounded-lg shadow-md"
+                className="w-full md:w-1/2 rounded-lg shadow-md overflow-auto"
               />
               <div className="text-center md:text-left">
                 <h3 className="text-lg font-semibold text-gray-800">{point.title}</h3>
