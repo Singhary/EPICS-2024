@@ -25,7 +25,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative flex-1 flex justify-center items-center group">
+      <div className="hidden relative flex-1 md:flex justify-center items-center group">
         <img
           src="bg1.png"
           alt="Happy Farmer"
