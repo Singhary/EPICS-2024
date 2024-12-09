@@ -8,16 +8,19 @@ const WeatherPage = () => {
           imgSrc="weather.png"
           title="Weather Updates"
           description="Stay ahead with real-time weather updates tailored to your location. This feature provides accurate forecasts, temperature insights, and weather predictions to help you plan your day effectively."
+          redirectTo="/marketplace"
         />
         <ReusableCard
           imgSrc="marketplace.png"
           title="Marketplace for Farmers"
           description="Access a wide range of farm products and services. This platform allows farmers to buy and sell farm produce, equipment, and services with ease."
+          redirectTo="/marketplace"
         />
         <ReusableCard
           imgSrc="list.png"
           title="MSP Price List"
           description="Stay updated with the latest MSP prices for crops. This feature ensures farmers are informed about the Minimum Support Price (MSP) for various produce."
+          redirectTo="https://www.google.com"
         />
       </div>
     </div>

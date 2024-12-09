@@ -1,15 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Menu,
-  X,
-  Keyboard,
-  Smartphone,
-  Home,
-  Info,
-  Phone,
-  Grid,
-} from "lucide-react";
+import { Menu, X, Keyboard, Smartphone, Home, Info, Phone } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,10 +14,9 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-950 border-b border-gray-700 shadow-lg">
+    <nav className="bg- fixed top-0 left-0 right-0 z-50 border-b border-gray-700 shadow-lg backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <div className="flex items-center gap-2">
@@ -43,7 +33,7 @@ export function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-gray-300 hover:bg-gray-800 hover:text-white rounded-md px-4 py-2 text-sm font-medium transition-colors"
+                  className="flex items-center gap-2 text-black hover:bg-gray-800 hover:text-white rounded-md px-4 py-2 text-sm font-medium transition-colors"
                   aria-label={item.name}
                 >
                   <item.icon className="h-5 w-5" />
