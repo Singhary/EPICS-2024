@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, X, Keyboard, Smartphone, Home, Info, Phone } from "lucide-react";
+import Link from "next/link";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,8 +21,10 @@ export function Navbar() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <div className="flex items-center gap-2">
-                <Keyboard className="h-8 w-8 text-indigo-400" />
-                <Smartphone className="h-8 w-8 text-indigo-400" />
+                <Link href={"/"} className="flex flex-row">
+                  <Keyboard className="h-8 w-8 text-indigo-400" />
+                  <Smartphone className="h-8 w-8 text-indigo-400" />
+                </Link>
               </div>
             </div>
           </div>

@@ -8,37 +8,37 @@ const foodItems = [
     id: 1,
     name: "Tomatoes",
     price: 5,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/tomatoes.jpeg",
   },
   {
     id: 2,
     name: "Onions",
     price: 6,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/onion.jpeg",
   },
   {
     id: 3,
     name: "Potatoes",
     price: 12,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/potatoes.jpeg",
   },
   {
     id: 4,
     name: "Coriander",
     price: 1.99,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/download.jpeg",
   },
   {
     id: 5,
     name: "Cauliflower",
     price: 6.99,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/cauliflower.jpeg",
   },
   {
     id: 6,
     name: "Bell Peppers",
     price: 5.99,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/capsicum.jpeg",
   },
 ];
 
