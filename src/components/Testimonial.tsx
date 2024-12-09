@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const farmerReviews = [
   {
@@ -61,7 +62,7 @@ const Testimonials = () => {
               </p>
             </div>
             <div className="flex items-center space-x-4 px-4">
-              <img
+              <Image
                 src={farmer.image}
                 alt={farmer.name}
                 className="w-16 h-16 rounded-full object-cover border-2 border-gray-300"

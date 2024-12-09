@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowRight, Smartphone, Keyboard } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -26,27 +27,27 @@ export function Hero() {
       </div>
 
       <div className="hidden relative flex-1 md:flex justify-center items-center group">
-        <img
+        <Image
           src="bg1.png"
           alt="Happy Farmer"
           className="rounded-xl shadow-lg w-3/4 object-cover z-10 transform group-hover:scale-105 group-hover:translate-y-[-10px] transition-transform duration-500 ease-in-out"
         />
-        <img
+        <Image
           src="farmlandscape.png"
           alt="Farm Landscape"
           className="absolute top-10 left-10 w-32 h-32 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[-5deg] group-hover:scale-110 group-hover:rotate-0 transition-transform duration-500 ease-in-out"
         />
-        <img
+        <Image
           src="farmland.png"
           alt="Farmland"
           className="absolute top-10 right-10 w-32 h-32 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[5deg] group-hover:scale-110 group-hover:rotate-0 transition-transform duration-500 ease-in-out"
         />
-        <img
+        <Image
           src="tractor.png"
           alt="Tractor"
           className="absolute bottom-10 left-10 w-40 h-40 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[3deg] group-hover:scale-110 group-hover:rotate-[-5deg] transition-transform duration-500 ease-in-out"
         />
-        <img
+        <Image
           src="tool.png"
           alt="Farming Tools"
           className="absolute bottom-10 right-10 w-40 h-40 object-cover rounded-lg shadow-lg border border-green-200 transform rotate-[3deg] group-hover:scale-110 group-hover:rotate-[5deg] transition-transform duration-500 ease-in-out"

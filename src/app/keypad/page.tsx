@@ -5,7 +5,7 @@ const faqItems = [
   {
     question: "How do I use the SMS service?",
     answer:
-      "Simply send a keyword like '1' to our designated number, and you'll receive updates instantly.",
+      "Simply send a keyword like &apos;1&apos; to our designated number, and you&apos;ll receive updates instantly.",
   },
   {
     question: "What does the service cost?",
@@ -23,7 +23,7 @@ const steps = [
   {
     step: "Step 1",
     description:
-      "Send a message with a specific code (e.g., '1' for weather updates) to our number.",
+      "Send a message with a specific code (e.g., &apos;1&apos; for weather updates) to our number.",
   },
   {
     step: "Step 2",
@@ -72,8 +72,8 @@ const KeypadSolution = () => {
             Weather Updates
           </h3>
           <p className="mt-2 text-gray-600">
-            Send <strong>'1'</strong> to receive real-time weather updates
-            tailored to your location.
+            Send <strong>&apos;1&apos;</strong> to receive real-time weather
+            updates tailored to your location.
           </p>
         </div>
         <div className="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition">
@@ -82,8 +82,8 @@ const KeypadSolution = () => {
             Crop Prices
           </h3>
           <p className="mt-2 text-gray-600">
-            Send <strong>'2'</strong> to get the latest Minimum Support Prices
-            (MSP) for crops.
+            Send <strong>&apos;2&apos;</strong> to get the latest Minimum
+            Support Prices (MSP) for crops.
           </p>
         </div>
         <div className="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition">
@@ -92,8 +92,8 @@ const KeypadSolution = () => {
             Emergency Services
           </h3>
           <p className="mt-2 text-gray-600">
-            Send <strong>'3'</strong> for emergency assistance or helpline
-            information.
+            Send <strong>&apos;3&apos;</strong> for emergency assistance or
+            helpline information.
           </p>
         </div>
       </div>

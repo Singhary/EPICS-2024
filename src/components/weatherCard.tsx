@@ -1,18 +1,19 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface NormalCardProps {
   title: string;
   description: string;
-  imgSrc: string;
+  ImageSrc: string;
   redirectTo: string;
 }
 
 export const ReusableCard = ({
   title,
   description,
-  imgSrc,
+  ImageSrc,
   redirectTo,
 }: NormalCardProps) => {
   const router = useRouter();
@@ -27,9 +28,9 @@ export const ReusableCard = ({
       className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-xl"
     >
       <div className="h-96 w-72">
-        <img
+        <Image
           className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-          src={imgSrc}
+          src={ImageSrc}
           alt=""
         />
       </div>
