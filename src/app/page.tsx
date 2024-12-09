@@ -1,16 +1,18 @@
-"use client";
-import { Chatbot } from "@/components/chatbot";
-import { Features } from "@/components/Features";
+import React from "react";
 import { Hero } from "@/components/Hero";
+import Benefits from "@/components/Benefits";
+import Testimonials from "@/components/Testimonial";
+import Footer from "@/components/Footer";
 
-export default function Home() {
+const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900">
-      <main>
-        <Hero />
-        <Features />
-        <Chatbot />
-      </main>
+    <div className="min-h-screen bg-green-50 text-gray-800">
+      <Hero />
+      <Benefits />
+      <Testimonials />
+      <Footer/>
     </div>
   );
-}
+};
+
+export default LandingPage;
