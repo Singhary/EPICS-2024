@@ -8,7 +8,7 @@ const WeatherPage = () => {
           ImageSrc="/weather.png"
           title="Weather Updates"
           description="Stay ahead with real-time weather updates tailored to your location. This feature provides accurate forecasts, temperature insights, and weather predictions to help you plan your day effectively."
-          redirectTo="/marketplace"
+          redirectTo="/weather"
         />
         <ReusableCard
           ImageSrc="/marketplace.png"
