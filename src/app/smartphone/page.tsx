@@ -20,7 +20,7 @@ const WeatherPage = () => {
           ImageSrc="/list.png"
           title="MSP Price List"
           description="Stay updated with the latest MSP prices for crops. This feature ensures farmers are informed about the Minimum Support Price (MSP) for various produce."
-          redirectTo="https://www.google.com"
+          redirectTo="/CropData"
         />
       </div>
     </div>
