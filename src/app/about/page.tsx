@@ -59,9 +59,9 @@ const AboutUs = () => {
             Empowering Farmers, Growing Communities
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            We're dedicated to supporting sustainable agriculture by connecting
+            Were dedicated to supporting sustainable agriculture by connecting
             farmers with resources, knowledge, and markets they need to thrive
-            in today's changing world.
+            in todays changing world.
           </p>
         </div>
 
@@ -153,9 +153,9 @@ const AboutUs = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md italic">
-              <div className="text-3xl text-green-500 mb-4">"</div>
+              <div className="text-3xl text-green-500 mb-4"></div>
               <p className="text-gray-700 mb-4">
-                This platform has completely transformed how I run my farm. I've
+                This platform has completely transformed how I run my farm. Ive
                 connected with local buyers and increased my profits by 40% this
                 year alone.
               </p>
@@ -164,7 +164,7 @@ const AboutUs = () => {
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md italic">
-              <div className="text-3xl text-green-500 mb-4">"</div>
+              <div className="text-3xl text-green-500 mb-4"></div>
               <p className="text-gray-700 mb-4">
                 The equipment sharing program saved me thousands of dollars.
                 Instead of buying a new tractor, I found one to borrow from a
