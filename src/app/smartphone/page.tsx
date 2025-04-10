@@ -3,7 +3,7 @@ import { ReusableCard } from "@/components/weatherCard";
 
 const WeatherPage = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-green-50">
+    <div className="flex min-h-screen items-center justify-center bg-green-50 p-20">
       <div className="grid grid-cols-1 gap-12 p-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
         <ReusableCard
           ImageSrc="/weather.png"
