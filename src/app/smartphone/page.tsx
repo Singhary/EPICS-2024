@@ -1,3 +1,4 @@
+// pages/index.tsx (or wherever WeatherPage is located)
 import { ReusableCard } from "@/components/weatherCard";
 
 const WeatherPage = () => {
@@ -21,6 +22,18 @@ const WeatherPage = () => {
           title="MSP Price List"
           description="Stay updated with the latest MSP prices for crops. This feature ensures farmers are informed about the Minimum Support Price (MSP) for various produce."
           redirectTo="/CropData"
+        />
+        <ReusableCard
+          ImageSrc="/chat.jpeg" 
+          title="RAG Chatbot"
+          description="Interact with an AI-powered chatbot to ask questions, upload documents, and manage your farm-related queries efficiently."
+          redirectTo="/chatbot"
+        />
+        <ReusableCard
+          ImageSrc="/farmer-chat.png"
+          title="Farmer AI Chatbot"
+          description="Chat in your language, analyze soil, identify pests, and get crop rotation advice."
+          redirectTo="/farmer-ai-chat"
         />
       </div>
     </div>
