@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface ChatInterfaceProps {
   messages: { role: string; content: string }[];
@@ -27,10 +27,20 @@ const FarmerAIChatInterface: React.FC<ChatInterfaceProps> = ({
       const selectedLang = input.trim().toLowerCase();
       if (selectedLang === "hindi") {
         setLanguage("hi_IN");
-        setMessages([{ role: "assistant", content: "आपने हिंदी चुनी है। अब आप कोई सवाल पूछ सकते हैं।" }]);
+        setMessages([
+          {
+            role: "assistant",
+            content: "आपने हिंदी चुनी है। अब आप कोई सवाल पूछ सकते हैं।",
+          },
+        ]);
       } else if (selectedLang === "english") {
         setLanguage("en_XX");
-        setMessages([{ role: "assistant", content: "You chose English. Now you can ask any question." }]);
+        setMessages([
+          {
+            role: "assistant",
+            content: "You chose English. Now you can ask any question.",
+          },
+        ]);
       } else {
         setMessages([
           ...messages,
@@ -55,12 +65,21 @@ const FarmerAIChatInterface: React.FC<ChatInterfaceProps> = ({
 
       const data = await response.json();
       if (response.ok) {
-        setMessages([...newMessages, { role: "assistant", content: data.answer }]);
+        setMessages([
+          ...newMessages,
+          { role: "assistant", content: data.answer },
+        ]);
       } else {
-        setMessages([...newMessages, { role: "assistant", content: `Error: ${data.error}` }]);
+        setMessages([
+          ...newMessages,
+          { role: "assistant", content: `Error: ${data.error}` },
+        ]);
       }
     } catch (error) {
-      setMessages([...newMessages, { role: "assistant", content: `Error: ${String(error)}` }]);
+      setMessages([
+        ...newMessages,
+        { role: "assistant", content: `Error: ${String(error)}` },
+      ]);
     } finally {
       setLoading(false);
     }
@@ -70,7 +89,12 @@ const FarmerAIChatInterface: React.FC<ChatInterfaceProps> = ({
     <div className="flex-1 p-6">
       <div className="h-[70vh] overflow-y-auto border rounded p-4 bg-white">
         {messages.map((msg, index) => (
-          <div key={index} className={`mb-4 ${msg.role === "user" ? "text-right" : "text-left"}`}>
+          <div
+            key={index}
+            className={`mb-4 ${
+              msg.role === "user" ? "text-right" : "text-left"
+            }`}
+          >
             <span
               className={`inline-block p-2 rounded ${
                 msg.role === "user" ? "bg-blue-100" : "bg-gray-200"
@@ -87,7 +111,11 @@ const FarmerAIChatInterface: React.FC<ChatInterfaceProps> = ({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="flex-1 p-2 border rounded"
-          placeholder={language ? "Type your query..." : "Choose language: Hindi or English"}
+          placeholder={
+            language
+              ? "Type your query..."
+              : "Choose language: Hindi or English"
+          }
           disabled={loading}
         />
         <button

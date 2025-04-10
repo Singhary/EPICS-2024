@@ -23,14 +23,14 @@ const WeatherPage = () => {
           description="Stay updated with the latest MSP prices for crops. This feature ensures farmers are informed about the Minimum Support Price (MSP) for various produce."
           redirectTo="/CropData"
         />
-        <ReusableCard
+        {/* <ReusableCard
           ImageSrc="/chat.jpeg" 
           title="RAG Chatbot"
           description="Interact with an AI-powered chatbot to ask questions, upload documents, and manage your farm-related queries efficiently."
           redirectTo="/chatbot"
-        />
+        /> */}
         <ReusableCard
-          ImageSrc="/farmer-chat.png"
+          ImageSrc="/chat.jpeg"
           title="Farmer AI Chatbot"
           description="Chat in your language, analyze soil, identify pests, and get crop rotation advice."
           redirectTo="/farmer-ai-chat"

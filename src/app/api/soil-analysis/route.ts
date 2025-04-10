@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   let body;
   try {
     body = await req.json();
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Invalid request body. Please provide valid JSON." },
       { status: 400 }
@@ -28,7 +28,12 @@ export async function POST(req: NextRequest) {
       potassium: parseFloat(potassium),
     };
 
-    if (isNaN(soilData.pH) || isNaN(soilData.nitrogen) || isNaN(soilData.phosphorus) || isNaN(soilData.potassium)) {
+    if (
+      isNaN(soilData.pH) ||
+      isNaN(soilData.nitrogen) ||
+      isNaN(soilData.phosphorus) ||
+      isNaN(soilData.potassium)
+    ) {
       return NextResponse.json(
         { error: "Invalid input: All values must be numeric" },
         { status: 400 }
@@ -69,7 +74,8 @@ export async function POST(req: NextRequest) {
     }
 
     const geminiResult = await response.json();
-    const analysisText = geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const analysisText =
+      geminiResult?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!analysisText) {
       return NextResponse.json({
@@ -82,12 +88,18 @@ export async function POST(req: NextRequest) {
     }
 
     const scoreMatch = analysisText.match(/score:?\s*(\d+(\.\d+)?)/i);
-    const healthScore = scoreMatch && scoreMatch[1] ? parseFloat(scoreMatch[1]) : calculateFallbackScore(soilData);
+    const healthScore =
+      scoreMatch && scoreMatch[1]
+        ? parseFloat(scoreMatch[1])
+        : calculateFallbackScore(soilData);
 
-    const recommendationMatch = analysisText.match(/recommendation:?\s*([^]*?)(?=\n\n\*?\s*[A-Za-z0-9]+:|$)/i);
-    const recommendation = recommendationMatch && recommendationMatch[1]
-      ? recommendationMatch[1].trim()
-      : getFallbackRecommendation(soilData);
+    const recommendationMatch = analysisText.match(
+      /recommendation:?\s*([^]*?)(?=\n\n\*?\s*[A-Za-z0-9]+:|$)/i
+    );
+    const recommendation =
+      recommendationMatch && recommendationMatch[1]
+        ? recommendationMatch[1].trim()
+        : getFallbackRecommendation(soilData);
 
     return NextResponse.json({
       healthScore,
@@ -108,7 +120,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(
       {
-        error: `Failed to process soil data with Gemini API: ${error instanceof Error ? error.message : String(error)}`,
+        error: `Failed to process soil data with Gemini API: ${
+          error instanceof Error ? error.message : String(error)
+        }`,
         healthScore: calculateFallbackScore(soilData),
         recommendation: getFallbackRecommendation(soilData),
         soilData,
@@ -118,13 +132,31 @@ export async function POST(req: NextRequest) {
   }
 }
 
-function calculateFallbackScore(soilData: { pH: number; nitrogen: number; phosphorus: number; potassium: number }) {
-  return (soilData.pH * 10 + soilData.nitrogen * 0.5 + soilData.phosphorus * 0.3 + soilData.potassium * 0.2) / 10;
+function calculateFallbackScore(soilData: {
+  pH: number;
+  nitrogen: number;
+  phosphorus: number;
+  potassium: number;
+}) {
+  return (
+    (soilData.pH * 10 +
+      soilData.nitrogen * 0.5 +
+      soilData.phosphorus * 0.3 +
+      soilData.potassium * 0.2) /
+    10
+  );
 }
 
-function getFallbackRecommendation(soilData: { pH: number; nitrogen: number; phosphorus: number; potassium: number }) {
+function getFallbackRecommendation(soilData: {
+  pH: number;
+  nitrogen: number;
+  phosphorus: number;
+  potassium: number;
+}) {
   const healthScore = calculateFallbackScore(soilData);
-  if (healthScore < 5) return "Soil is poor. Add organic compost and nitrogen-rich fertilizers.";
-  if (healthScore < 7) return "Soil is average. Consider balanced NPK fertilizers.";
+  if (healthScore < 5)
+    return "Soil is poor. Add organic compost and nitrogen-rich fertilizers.";
+  if (healthScore < 7)
+    return "Soil is average. Consider balanced NPK fertilizers.";
   return "Soil is healthy. Maintain current practices.";
 }

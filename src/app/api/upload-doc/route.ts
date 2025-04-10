@@ -3,12 +3,15 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
-    const file = formData.get("file") as File;
+    // Either use the file variable or remove it
 
-    const response = await fetch("https://rag-backend-ej9k.onrender.com/upload-doc", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://rag-backend-ej9k.onrender.com/upload-doc",
+      {
+        method: "POST",
+        body: formData, // You're using formData directly, not the file variable
+      }
+    );
 
     console.log("Response from server:", response); // Log the response for debugging
 
@@ -22,6 +25,9 @@ export async function POST(req: NextRequest) {
     const result = await response.json();
     return NextResponse.json(result);
   } catch (error) {
-    return NextResponse.json({ error: `An error occurred: ${error}` }, { status: 500 });
+    return NextResponse.json(
+      { error: `An error occurred: ${error}` },
+      { status: 500 }
+    );
   }
 }

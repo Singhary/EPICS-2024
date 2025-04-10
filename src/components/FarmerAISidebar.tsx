@@ -2,11 +2,36 @@
 
 import { useState } from "react";
 
+// Define types for our state variables
+interface PestResult {
+  label: string;
+  score: number;
+}
+
+interface SoilData {
+  ph: string;
+  nitrogen: string;
+  phosphorus: string;
+  potassium: string;
+}
+
+interface SoilResult {
+  healthScore: number;
+  recommendation: string;
+  analysisDetails?: string;
+  error?: string;
+}
+
 const FarmerAISidebar: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
-  const [pestResult, setPestResult] = useState<any>(null);
-  const [soilData, setSoilData] = useState({ ph: "", nitrogen: "", phosphorus: "", potassium: "" });
-  const [soilResult, setSoilResult] = useState<any>(null);
+  const [pestResult, setPestResult] = useState<PestResult[] | null>(null);
+  const [soilData, setSoilData] = useState<SoilData>({
+    ph: "",
+    nitrogen: "",
+    phosphorus: "",
+    potassium: "",
+  });
+  const [soilResult, setSoilResult] = useState<SoilResult | null>(null);
   const [previousCrop, setPreviousCrop] = useState("");
   const [rotationSuggestions, setRotationSuggestions] = useState<string[]>([]);
 
@@ -98,14 +123,18 @@ const FarmerAISidebar: React.FC = () => {
       <input
         type="number"
         value={soilData.phosphorus}
-        onChange={(e) => setSoilData({ ...soilData, phosphorus: e.target.value })}
+        onChange={(e) =>
+          setSoilData({ ...soilData, phosphorus: e.target.value })
+        }
         className="w-full p-2 mb-2 border rounded"
         placeholder="Phosphorus (mg/kg)"
       />
       <input
         type="number"
         value={soilData.potassium}
-        onChange={(e) => setSoilData({ ...soilData, potassium: e.target.value })}
+        onChange={(e) =>
+          setSoilData({ ...soilData, potassium: e.target.value })
+        }
         className="w-full p-2 mb-2 border rounded"
         placeholder="Potassium (mg/kg)"
       />
@@ -119,14 +148,20 @@ const FarmerAISidebar: React.FC = () => {
         <div className="mb-4">
           <p>Health Score: {soilResult.healthScore.toFixed(2)}</p>
           <p className="mt-2">Recommendation:</p>
-          <p className="text-sm whitespace-pre-wrap">{soilResult.recommendation}</p>
+          <p className="text-sm whitespace-pre-wrap">
+            {soilResult.recommendation}
+          </p>
           {soilResult.analysisDetails && (
             <>
               <p className="mt-2 font-semibold">Full Analysis:</p>
-              <p className="text-sm whitespace-pre-wrap">{soilResult.analysisDetails}</p>
+              <p className="text-sm whitespace-pre-wrap">
+                {soilResult.analysisDetails}
+              </p>
             </>
           )}
-          {soilResult.error && <p className="text-red-500">Error: {soilResult.error}</p>}
+          {soilResult.error && (
+            <p className="text-red-500">Error: {soilResult.error}</p>
+          )}
         </div>
       )}
 

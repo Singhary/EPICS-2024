@@ -1,12 +1,13 @@
-// app/chatbot/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ChatInterface from "@/components/ChatInterface";
 import Sidebar from "@/components/Sidebar";
 
 const ChatbotPage = () => {
-  const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
+  const [messages, setMessages] = useState<{ role: string; content: string }[]>(
+    []
+  );
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [model, setModel] = useState<string>("gemini-1.5-flash"); // Default model
 
