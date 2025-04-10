@@ -66,6 +66,8 @@ const Testimonials = () => {
                 src={farmer.image}
                 alt={farmer.name}
                 className="w-16 h-16 rounded-full object-cover border-2 border-gray-300"
+                height={64}
+                width={64}
               />
               <div>
                 <h3 className="text-lg font-semibold text-gray-800">
